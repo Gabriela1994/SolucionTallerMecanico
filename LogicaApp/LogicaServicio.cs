@@ -2,11 +2,6 @@
 using AccesoDatos.Repositorios;
 using Modelos.ClasesCustom;
 using Modelos;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace LogicaApp
 {
@@ -20,12 +15,14 @@ namespace LogicaApp
         }
 
         public List<Servicio> ListarServicios()
+        //Devuelve la lista de servicios.
         {
             RepositorioServicio repoServicio = new RepositorioServicio(_context);
             return repoServicio.ListaServicios();
         }
 
         public void CrearServicio(CrearServicio servicio)
+        //Crea un servicio, primero verifica si no es null el parametro recibido.
         {
             try
             {
@@ -43,6 +40,7 @@ namespace LogicaApp
         }
 
         public void EditarServicio(int id_servicio, CrearServicio servicio)
+        //Edita un servicio, primero verifica que el id no sea 0.
         {
             try
             {
@@ -64,6 +62,7 @@ namespace LogicaApp
         }
 
         public void EliminarServicio(int id_servicio)
+        //Elimina un servicio, primero verifica que el id no sea 0.
         {
             try
             {
@@ -80,6 +79,7 @@ namespace LogicaApp
         }
 
         public Servicio ObtenerServicioPorId(int id_servicio)
+        //Obtiene el servicio buscandolo por su id.
         {
             RepositorioServicio repoServicio = new RepositorioServicio(_context);
             return repoServicio.ObtenerServicioPorId(id_servicio);

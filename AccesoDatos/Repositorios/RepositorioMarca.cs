@@ -1,10 +1,5 @@
 ﻿using AccesoDatos.DataContext;
 using Modelos;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace AccesoDatos.Repositorios
 {
@@ -16,9 +11,8 @@ namespace AccesoDatos.Repositorios
         {
             _context = context;
         }
-
-
         public Marca ObtenerMarca(int id)
+        //Obtiene la lista de marcas.
         {
             Marca marca = _context.Marca.Find(id);
             return marca;

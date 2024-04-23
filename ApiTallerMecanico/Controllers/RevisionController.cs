@@ -1,6 +1,6 @@
 ﻿using AccesoDatos.DataContext;
+using AccesoDatos.Repositorios;
 using LogicaApp;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Modelos.ClasesCustom;
 
@@ -17,9 +17,12 @@ namespace ApiTallerMecanico.Controllers
         }
 
         // GET: RevisionController
-        public ActionResult Index()
+        [HttpGet]
+        [Route("revision/lista-revision")]
+        public List<ListaRevisiones> Index()
         {
-            return View();
+            RepositorioDetalleRevision repoRevision = new RepositorioDetalleRevision(_context);
+            return repoRevision.ListaDetalleDeRevisiones();
         }
 
         // GET: RevisionController/Details/5

@@ -1,11 +1,6 @@
 ﻿using AccesoDatos.DataContext;
 using Microsoft.EntityFrameworkCore;
 using Modelos;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace AccesoDatos.Repositorios
 {
@@ -17,7 +12,6 @@ namespace AccesoDatos.Repositorios
         {
             _context = context;
         }
-
 
         public List<Servicio> ListaServicios()
         //Retorno la lista de los servicios.
@@ -33,8 +27,8 @@ namespace AccesoDatos.Repositorios
         }
 
         public void CargarServicio(Servicio value)
+        //Crea un servicio.
         {
-
             using (_context)
             {
                 Servicio servicio = new Servicio(nombre_servicio: value.Nombre_servicio, precio_estimado: value.Precio_estimado);
@@ -44,6 +38,7 @@ namespace AccesoDatos.Repositorios
         }
 
         public void EditarServicio(int id, Servicio value)
+        //Edita un servicio existente, primero revisa si ese id existe en la base de datos.
         {
             using (_context)
             {
@@ -57,6 +52,7 @@ namespace AccesoDatos.Repositorios
         }
 
         public void EliminarServicio(int id)
+        //Elimina un servicio existente, primero revisa si ese id existe en la base de datos.
         {
             using (_context)
             {
@@ -67,15 +63,10 @@ namespace AccesoDatos.Repositorios
         }
 
         public Servicio ObtenerServicioPorId(int id)
+        //Obtiene un servicio buscandolo por su id.
         { 
             Servicio servicio = _context.Servicio.Find(id);
             return servicio;
-        }        
-        public List<Servicio> ObtenerListaServiciosPorId(List<int> id_servicio) //probar
-        {
-            Servicio servicio = new Servicio();
-            var registros = _context.Servicio.Where(t => id_servicio.Contains(t.IdServicio)).ToList();
-            return registros;
         }
     }
 }

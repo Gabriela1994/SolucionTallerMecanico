@@ -1,7 +1,4 @@
-﻿
-
-
-using AccesoDatos.DataContext;
+﻿using AccesoDatos.DataContext;
 using AccesoDatos.Repositorios;
 using Modelos;
 using Modelos.ClasesCustom;
@@ -19,12 +16,14 @@ namespace LogicaApp
 
 
         public List<Vehiculo> ListarVehiculos()
+        //Lista todos los vehiculos existentes.
         {
             RepositorioVehiculo repoVehiculo = new RepositorioVehiculo(_context);
             return repoVehiculo.ListaVehiculos();
         }
 
         public void CrearVehiculo(CrearVehiculo vehiculo)
+        //Crea un vehiculo.
         {
             try
             {
@@ -47,6 +46,7 @@ namespace LogicaApp
         }
 
         public void EditarVehiculo(int id_vehiculo, CrearVehiculo vehiculo)
+        //Edita un vehiculo.
         {
             try
             {
@@ -76,6 +76,7 @@ namespace LogicaApp
         }
 
         public void EliminarVehiculo(int id_vehiculo)
+        //Elimina un vehiculo.
         {
             try
             {
@@ -92,6 +93,7 @@ namespace LogicaApp
         }
 
         public Vehiculo ObtenerVehiculoPorId(int id_vehiculo)
+        //Obtiene el vehiculo buscandolo por su id.
         {
             RepositorioVehiculo repoVehiculo = new RepositorioVehiculo(_context);
             return repoVehiculo.ObtenerVehiculoPorId(id_vehiculo);

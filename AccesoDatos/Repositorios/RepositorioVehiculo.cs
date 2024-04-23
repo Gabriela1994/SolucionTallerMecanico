@@ -13,7 +13,6 @@ namespace AccesoDatos.Repositorios
             _context = context;
         }
 
-
         public List<Vehiculo> ListaVehiculos()
         //Retorno la lista de los vehiculos.
         {
@@ -26,13 +25,12 @@ namespace AccesoDatos.Repositorios
                     .Include("Marca")
                     .ToList();
             }
-
             return lista_vehiculos;
         }
 
         public void CargarVehiculo(Vehiculo value)
+        //Crea un nuevo vehiculo.
         {
-
             using(_context)
             {
                 Vehiculo vehiculo = new Vehiculo(matricula: value.Matricula, marca: value.Marca, color: value.Color, modelo: value.Modelo);
@@ -42,6 +40,7 @@ namespace AccesoDatos.Repositorios
         }
 
         public void EditarVehiculo(int id, Vehiculo value)
+        //Edita un vehiculo existente.
         {
             using(_context)
             {
@@ -57,6 +56,7 @@ namespace AccesoDatos.Repositorios
         }
 
         public void EliminarVehiculo(int id)
+        //Elimina un vehiculo existente.
         {
             using(_context)
             {
@@ -67,6 +67,7 @@ namespace AccesoDatos.Repositorios
         }
 
         public Vehiculo ObtenerVehiculoPorId(int id)
+        //Obtiene un vehiculo buscandolo por su id.
         {
             Vehiculo vehiculo = new Vehiculo();
             return vehiculo = _context.Vehiculo

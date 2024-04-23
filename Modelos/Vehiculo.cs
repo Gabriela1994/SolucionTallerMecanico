@@ -13,7 +13,7 @@ namespace Modelos
         public Color Color { get; set; }
         public string Modelo { get; set; }
 
-        //[JsonIgnore]
+        [JsonIgnore]
         public List<Revision> Revision { get; set; }
 
         public Vehiculo(string matricula, Marca marca, Color color, string modelo) 

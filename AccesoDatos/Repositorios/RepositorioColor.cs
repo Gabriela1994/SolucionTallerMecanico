@@ -12,8 +12,8 @@ namespace AccesoDatos.Repositorios
             _context = context;
         }
 
-
         public Color ObtenerColor(int id)
+        //Obtiene la lista de colores.
         {
             Color color = _context.Color.Find(id);
             return color;

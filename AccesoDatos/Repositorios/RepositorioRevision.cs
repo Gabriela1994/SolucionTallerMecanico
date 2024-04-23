@@ -33,13 +33,14 @@ namespace AccesoDatos.Repositorios
             return lista_revisiones;
         }
 
-        public int CrearRevision(Revision value) //falta por probar
+        public int CrearRevision(Revision value)
+        //Crea una revision en la base de datos y retorno el id.
         {
             Revision revision = new Revision();
             revision.IdRevision = value.IdRevision; //??
             revision.Fecha_ingreso = value.Fecha_ingreso;
             revision.Hora = value.Hora;
-            revision.Vehiculo = value.Vehiculo; //esto es un objeto entero vehiculo, hay que buscarlo primero
+            revision.Vehiculo = value.Vehiculo;
 
 
             _context.Add(revision);
