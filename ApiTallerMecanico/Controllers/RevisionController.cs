@@ -18,7 +18,7 @@ namespace ApiTallerMecanico.Controllers
 
         // GET: RevisionController
         [HttpGet]
-        [Route("revision/lista-revision")]
+        [Route("revision/lista-revisiones")]
         public List<ListaRevisiones> Index()
         {
             RepositorioDetalleRevision repoRevision = new RepositorioDetalleRevision(_context);
@@ -39,7 +39,7 @@ namespace ApiTallerMecanico.Controllers
 
         // POST: RevisionController/Create
         [HttpPost]
-        [Route("crear-revision")]
+        [Route("revision/crear-revision")]
         public void Create(CrearRevision item_revision)
         {
             try

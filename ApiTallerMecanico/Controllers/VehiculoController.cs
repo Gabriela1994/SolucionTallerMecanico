@@ -18,7 +18,7 @@ namespace ApiTallerMecanico.Controllers
 
 
         [HttpGet]
-        [Route("lista-vehiculo")]
+        [Route("vehiculo/lista-vehiculos")]
         public List<Vehiculo> Index()
         //Lista todos los vehiculos que existen en la base de datos.
         {
@@ -27,7 +27,7 @@ namespace ApiTallerMecanico.Controllers
         }
 
         [HttpGet]
-        [Route("detalle-vehiculo")]
+        [Route("vehiculo/detalle-vehiculo")]
         public Vehiculo Details(int id)
         //Obtiene el detalle de un vehiculo, buscandolo por la id.
         {
@@ -42,7 +42,7 @@ namespace ApiTallerMecanico.Controllers
         }
 
         [HttpPost]
-        [Route("crear-vehiculo")]
+        [Route("vehiculo/crear-vehiculo")]
         public void Create(CrearVehiculo vehiculo)
         //Crea un objeto Vehiculo en la base de datos.
         {
@@ -58,7 +58,7 @@ namespace ApiTallerMecanico.Controllers
         }
 
         [HttpPost]
-        [Route("editar-vehiculo")]
+        [Route("vehiculo/editar-vehiculo")]
         public void Edit(int id, CrearVehiculo vehiculo)
         //Edita un objeto Vehiculo en la base de datos por su id.
         {
@@ -74,7 +74,7 @@ namespace ApiTallerMecanico.Controllers
         }
 
         [HttpGet]
-        [Route("eliminar-vehiculo")]
+        [Route("vehiculo/eliminar-vehiculo")]
         public void Delete(int id)
         //Elimina un objeto Vehiculo en la base de datos por su id.
         {

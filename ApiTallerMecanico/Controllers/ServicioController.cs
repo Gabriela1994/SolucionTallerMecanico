@@ -16,7 +16,7 @@ namespace ApiTallerMecanico.Controllers
         }
 
         [HttpGet]
-        [Route("lista-servicio")]
+        [Route("servicio/lista-servicios")]
         public List<Servicio> Index()
         {
             LogicaServicio logicaServicio = new LogicaServicio(_context);
@@ -24,7 +24,7 @@ namespace ApiTallerMecanico.Controllers
         }
 
         [HttpGet]
-        [Route("detalle-servicio")]
+        [Route("servicio/detalle-servicio")]
         public Servicio Details(int id)
         {
             LogicaServicio logicaServicio= new LogicaServicio(_context);
@@ -39,7 +39,7 @@ namespace ApiTallerMecanico.Controllers
 
         // POST: ServicioController/Create
         [HttpPost]
-        [Route("crear-servicio")]
+        [Route("servicio/crear-servicio")]
         public void Create(CrearServicio servicio)
         {
             try
@@ -61,7 +61,7 @@ namespace ApiTallerMecanico.Controllers
 
         // POST: ServicioController/Edit/5
         [HttpPost]
-        [Route("editar-servicio")]
+        [Route("servicio/editar-servicio")]
         public void Edit(int id, CrearServicio servicio)
         {
             try
@@ -77,7 +77,7 @@ namespace ApiTallerMecanico.Controllers
 
         // GET: ServicioController/Delete/5
         [HttpGet]
-        [Route("eliminar-servicio")]
+        [Route("servicio/eliminar-servicio")]
         public void Delete(int id)
         {
             LogicaServicio logicaServicio = new LogicaServicio(_context);
